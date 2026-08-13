@@ -42,8 +42,8 @@ public enum FireBirdFieldType {
     //https://www.firebirdsql.org/file/documentation/release_notes/html/en/4_0/rlsnotes40.html
     DECFLOAT(11, Types.FLOAT, DBPDataKind.NUMERIC, "DECFLOAT", 4, 0),
     INT128(26, Types.BIGINT, DBPDataKind.NUMERIC, "INT128", 4, 0),
-    TIME_WITH_TIMEZONE(28, Types.TIME_WITH_TIMEZONE, DBPDataKind.DATETIME, "TIME WITH TIMEZONE", 4, 0),
-    TIMESTAMP_WITH_TIMEZONE(29, Types.TIMESTAMP_WITH_TIMEZONE, DBPDataKind.DATETIME, "TIMESTAMP WITH TIMEZONE", 4, 0);
+    TIME_WITH_TIMEZONE(28, Types.TIME_WITH_TIMEZONE, DBPDataKind.DATETIME, "TIME WITH TIME ZONE", 4, 0),
+    TIMESTAMP_WITH_TIMEZONE(29, Types.TIMESTAMP_WITH_TIMEZONE, DBPDataKind.DATETIME, "TIMESTAMP WITH TIME ZONE", 4, 0);
 
     private final int typeID;
     private final int valueType;
