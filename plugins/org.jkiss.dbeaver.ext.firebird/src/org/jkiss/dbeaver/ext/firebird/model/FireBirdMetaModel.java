@@ -312,7 +312,10 @@ public class FireBirdMetaModel extends GenericMetaModel
 
     @Override
     public GenericTableBase createTableImpl(@NotNull JDBCSession session, @NotNull GenericStructContainer owner, @NotNull GenericMetaObject tableObject, @NotNull JDBCResultSet dbResult) {
-        String relationName = JDBCUtils.safeGetStringTrimmed(dbResult, "RDB$RELATION_NAME");
+        String relationName = JDBCUtils.safeGetString(dbResult, "RDB$RELATION_NAME");
+        if (relationName != null) {
+            relationName = relationName.stripTrailing();
+        }
         boolean isSystem = JDBCUtils.safeGetInt(dbResult, "RDB$SYSTEM_FLAG") != 0;
         int relType = getRelationType(dbResult);
         GenericTableBase table;
